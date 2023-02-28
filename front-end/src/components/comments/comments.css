@@ -1,0 +1,38 @@
+.comment-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* .grid-rows-header-content-badge {
+  display: grid;
+  grid-template-rows: auto 1fr;
+} */
+
+.dwl-item {
+  cursor: grab;
+  position: relative;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.on-chapt {
+  margin: 0;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.text-cut {
+  -webkit-line-clamp: 4;
+  margin-bottom: 1rem;
+  font-size: 1.1em;
+  line-height: 1.5;
+  height: 6em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

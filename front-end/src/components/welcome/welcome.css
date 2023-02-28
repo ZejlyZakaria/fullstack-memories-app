@@ -1,0 +1,19 @@
+.user-categories-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: block;
+  top: 0px;
+  padding: 0 calc(3.5vw + 5px);
+  color: #fff !important;
+}
+.user-categories-page::after {
+  background: url("../../assets/images/home-background.png") center center / cover no-repeat
+    fixed;
+  content: "";
+  position: absolute;
+  inset: 0px;
+  opacity: 1;
+  z-index: -1;
+  /* color:#DDE6F1 */
+}

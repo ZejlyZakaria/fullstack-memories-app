@@ -1,0 +1,15 @@
+.title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: white;
+  font-weight: 400;
+}
+.trending-content {
+  background-clip: padding-box;
+}
+.trending-card {
+  display: flex;
+  flex-direction: column;
+}

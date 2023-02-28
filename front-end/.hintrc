@@ -8,7 +8,10 @@
       {
         "ignore": [
           "background-clip",
-          "-webkit-text-size-adjust"
+          "-webkit-text-size-adjust",
+          "-webkit-backdrop-filter",
+          "backdrop-filter",
+          "width: fit-content"
         ]
       }
     ]
