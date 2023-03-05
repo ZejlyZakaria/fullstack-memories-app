@@ -7,6 +7,7 @@ import AnimeHome from "./animes/AnimeHome";
 import AnimeDetailsPage from "./animes/AnimeDetailsPage";
 import AnimeFavorite from "./animes/AnimeFavorite";
 import AnimesList from "./animes/AnimesList";
+import AddAnime from "./components/addAnime/AddAnime";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="details-page" element={<AnimeDetailsPage />} />
               <Route path="favorite" element={<AnimeFavorite />} />
               <Route path="all" element={<AnimesList />} />
+              <Route path="add" element={<AddAnime />} />
             </Route>
           </Route>
         </Routes>

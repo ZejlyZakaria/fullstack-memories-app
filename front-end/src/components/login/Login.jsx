@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:8000/api/login", {
+        email: email,
+        password: password,
+      });
+
+      console.log(response.data);
+      navigate("/animes");
+    } catch (error) {
+      setErrorMessage("Email ou mot de passe invalide");
+    }
+  };
   return (
     <div className="wrapper">
       <div id="stars"></div>
@@ -15,7 +38,7 @@ const Login = () => {
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
               </h1>
-              <form class="space-y-4 md:space-y-6" action="#">
+              <form class="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label
                     for="email"
@@ -30,6 +53,8 @@ const Login = () => {
                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required=""
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div>
@@ -46,6 +71,8 @@ const Login = () => {
                     placeholder="••••••••"
                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -68,7 +95,12 @@ const Login = () => {
                       </label>
                     </div>
                   </div>
-                  <Link className="text-gray-500 dark:text-gray-300" to="/forgotpwd">Forgot Password ?</Link>
+                  <Link
+                    className="text-gray-500 dark:text-gray-300"
+                    to="/forgotpwd"
+                  >
+                    Forgot Password ?
+                  </Link>
                 </div>
                 <button
                   type="submit"
@@ -76,6 +108,11 @@ const Login = () => {
                 >
                   Sign in
                 </button>
+                <div class="text-center">
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{errorMessage}</span>
+                  </p>
+                </div>
                 <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
                   <Link
@@ -95,3 +132,51 @@ const Login = () => {
 };
 
 export default Login;
+
+// import React, { useState } from "react";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+
+// const Login = () => {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const navigate = useNavigate();
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     try {
+//       const response = await axios.post("http://localhost:8000/api/login", {
+//         email: email,
+//         password: password,
+//       });
+
+//       console.log(response.data);
+//       navigate('/animes');
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <input
+//           type="email"
+//           placeholder="Email"
+//           value={email}
+//           onChange={(e) => setEmail(e.target.value)}
+//         />
+//         <input
+//           type="password"
+//           placeholder="Mot de passe"
+//           value={password}
+//           onChange={(e) => setPassword(e.target.value)}
+//         />
+//         <button type="submit">Connexion</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Login;

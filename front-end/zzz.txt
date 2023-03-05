@@ -1,121 +1,96 @@
-En tant que développeur en herbe, je suis très intéressé par l'opportunité de rejoindre votre entreprise en tant que stagiaire en développement front end. Je suis convaincu que ce stage me permettra d'acquérir de nouvelles compétences et de renforcer mes connaissances dans les technologies de pointe utilisées par votre entreprise.
-
-Je suis passionné par l'informatique et j'ai choisi d'étudier l'ingénierie informatique pour approfondir mes connaissances et acquérir une compréhension plus approfondie de la manière dont les logiciels sont développés et déployés. En tant qu'étudiant en deuxième année de cycle ingénieur, j'ai déjà acquis une solide compréhension des langages de programmation couramment utilisés, ainsi que des bases de données, des réseaux et des systèmes d'exploitation.
-
-En somme, je suis convaincu que ce stage me permettra de renforcer mes compétences en développement front end et de contribuer de manière significative à votre entreprise. Je suis impatient de rejoindre votre équipe et de contribuer à la réalisation de projets passionnants.
-
-
-
-import React from "react";
-
-const DetailsPage = () => {
-  return (
-    <div>
-      <div className="detailspage-bg">
-        <div class=" w-full h-52 sm:h-52 md:h-48 lg:h-52 xl:h-80 ">
-          <img
-            src="/assets/images/anime_bg.jpg"
-            alt=""
-            className="object-cover w-full h-full rounded-b-3xl"
-          />
-        </div>
-        <div className="flex flex-col xl:flex-row text-white">
-          <div class="w-full xl:w-2/3 p-8">
-            <div class="grid grid-cols-12">
-              <div class="col-span-12 md:col-span-3">
-                <div className="detailspage-anime-img flex items-center justify-center md:block object-cover rounded-lg mb-6">
-                  <div>
-                    <img
-                      src="/assets/images/hxh3.jpg"
-                      className="w-36 h-[220px] sm:w-[144px] sm:h-[212px] md:w-40 md:h-[236px] lg:w-44 lg:h-[258px] xl:w-40 xl:h-[246px] 2xl:w-48 2xl:h-[296px] object-cover rounded-lg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col-span-12 md:col-span-9  flex items-center justify-center md:block">
-                <div className="detailspage-info md:ml-8 lg:ml-0">
-                  <div className="detailspage-title text-center md:text-left text-2xl md:text-4xl font-semibold mb-6">
-                    Hunter X Hunter
-                  </div>
-                  <div className="detailspage-category flex mb-6 text-md md:text-base">
-                    <div className="py-2 px-3 rounded-lg border border-slate-500 mr-4">
-                      Adventure
-                    </div>
-                    <div className="py-2 px-3 rounded-lg border border-slate-500 mr-4">
-                      Drama
-                    </div>
-                    <div className="py-2 px-3 rounded-lg border border-slate-500">
-                      Action
-                    </div>
-                  </div>
-                  <div className="detailspage-options flex mb-6">
-                    <div className="flex items-center py-2 px-6 bg-slate-500 rounded-lg mr-4 hover:bg-slate-700 cursor-pointer">
-                      <div className="mr-3">
-                        <i class="bx bx-play font-bold text-xl"></i>
-                      </div>
-                      <div>Trailer</div>
-                    </div>
-                    <div className=" border border-slate-500 flex items-center rounded-lg mr-4 py-2 px-4 hover:bg-slate-700 cursor-pointer">
-                      <i class="bx bx-plus"></i>
-                    </div>
-                    <div className=" border border-red-700 flex items-center rounded-lg mr-4 py-2 px-4 text-red-500 hover:bg-red-500 hover:text-white cursor-pointer">
-                      <i class="bx bxs-heart font-bold text-xl"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* story line */}
-            <div class="grid grid-cols-12">
-              <div class="col-span-12 md:col-span-3 flex items-center justify-center md:block text-lg md:text-xl font-semibold text-slate-500">
-                {/* <div>
-                  <div className="mb-4">
-                    From <span>2013</span>
-                  </div>
-                  <div>
-                    Until <span>Today</span>
-                  </div>
-                </div> */}
-              </div>
-              <div class="col-span-12 md:col-span-9 flex items-center justify-center md:block">
+<Link to="/animes/details-page">
+          <Tilt options={options}>
+            <div className="trending-content flex justify-center rounded-lg mb-3 cursor-pointer ">
+              <div className="trending-card rounded-lg">
                 <div>
-                  <div className="text-xl md:text-2xl font-semibold mb-6 text-center md:text-left">
-                    Storyline
+                  <div className="trending-img w-36 h-[220px] sm:w-[144px] sm:h-[212px] md:w-40 md:h-[236px] lg:w-44 lg:h-[264px] xl:w-[144px] xl:h-[216px] 2xl:w-40 2xl:h-[240px]">
+                    <img
+                      src="/assets/images/bleach_s2.webp"
+                      alt=""
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
-                  <div>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Voluptatum ipsam asperiores maiores nostrum adipisci ducimus
-                    ad iure, sit aliquam porro impedit numquam molestias vel.
-                    Exercitationem ex ipsam voluptas ipsum est harum vel? Non
-                    sit cum dolor. Eligendi quod autem enim tenetur odio,
-                    debitis corrupti libero soluta molestiae exercitationem
-                    saepe similique!
+                  <div className="trending-info w-32 mt-2">
+                    <div className="title text-sm md:text-md">
+                      Bleach Saison 2
+                    </div>
+                  </div>
+                  <div className="trending-rating bottom-section flex items-center text-white mt-1">
+                    <i class="bx bxs-star mr-2 text-xl text-orange-500"></i>
+                    <div className="text-gray-300 text-sm">92%</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Tilt>
+        </Link>
 
-          <div class="w-full xl:w-1/3 p-8 border-0 xl:border-l xl:border-slate-500">
-            <div className="recently-added-title text-xl md:text-2xl font-semibold mb-2">
-              More like this
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-1 gap-3 ">
-              <div className="recently-added-others p-4 cursor-pointer bg-slate-500 rounded-lg">
-                <div className="recently-added-img flex items-center mr-3 ">
-                  <div className="rounded-md h-[90px] w-14 sm:h-[76px] sm:w-12 lg:h-[90px] lg:w-14 xl:h-[90px] xl:w-14">
+        <Link to="/animes/details-page">
+          <Tilt options={options}>
+            <div className="trending-content flex justify-center rounded-lg mb-3 cursor-pointer ">
+              <div className="trending-card rounded-lg">
+                <div>
+                  <div className="trending-img w-36 h-[220px] sm:w-[144px] sm:h-[212px] md:w-40 md:h-[236px] lg:w-44 lg:h-[264px] xl:w-[144px] xl:h-[216px] 2xl:w-40 2xl:h-[240px]">
                     <img
-                      src="/assets/images/tokyoghoul.jpg"
-                      className="object-cover rounded-md h-full w-full"
+                      src="/assets/images/deathnote.webp"
                       alt=""
+                      className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
+                  <div className="trending-info w-32 mt-2">
+                    <div className="title text-sm md:text-md">Death Note</div>
+                  </div>
+                  <div className="trending-rating bottom-section flex items-center text-white mt-1">
+                    <i class="bx bxs-star mr-2 text-xl text-orange-500"></i>
+                    <div className="text-gray-300 text-sm">90%</div>
+                  </div>
                 </div>
-                <div className="recently-added-title font-semibold mb-1 text-base sm:text-sm md:text-sm lg:text-sm xl:text-base">
-                  <div class="recently-added-title-content text-white mb-1">
-                    Tokyo Ghoul
+              </div>
+            </div>
+          </Tilt>
+        </Link>
+
+        <Link to="/animes/details-page">
+          <Tilt options={options}>
+            <div className="trending-content flex justify-center rounded-lg mb-3 cursor-pointer ">
+              <div className="trending-card rounded-lg">
+                <div>
+                  <div className="trending-img w-36 h-[220px] sm:w-[144px] sm:h-[212px] md:w-40 md:h-[236px] lg:w-44 lg:h-[264px] xl:w-[144px] xl:h-[216px] 2xl:w-40 2xl:h-[240px]">
+                    <img
+                      src="/assets/images/jujistukaisen.jpg"
+                      alt=""
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="trending-info w-32 mt-2">
+                    <div className="title text-sm md:text-md">
+                      Jujistu Kaisen
+                    </div>
+                  </div>
+                  <div className="trending-rating bottom-section flex items-center text-white mt-1">
+                    <i class="bx bxs-star mr-2 text-xl text-orange-500"></i>
+                    <div className="text-gray-300 text-sm">85%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Tilt>
+        </Link>
+
+        <Link to="/animes/details-page">
+          <Tilt options={options}>
+            <div className="trending-content flex justify-center rounded-lg mb-3 cursor-pointer ">
+              <div className="trending-card rounded-lg">
+                <div>
+                  <div className="trending-img w-36 h-[220px] sm:w-[144px] sm:h-[212px] md:w-40 md:h-[236px] lg:w-44 lg:h-[264px] xl:w-[144px] xl:h-[216px] 2xl:w-40 2xl:h-[240px]">
+                    <img
+                      src="/assets/images/blackclover.jfif"
+                      alt=""
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="trending-info w-32 mt-2">
+                    <div className="title text-sm md:text-md">Black Clover</div>
                   </div>
                   <div className="trending-rating bottom-section flex items-center text-white mt-1">
                     <i class="bx bxs-star mr-2 text-xl text-orange-500"></i>
@@ -123,233 +98,6 @@ const DetailsPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="recently-added-others p-4 cursor-pointer bg-slate-500 rounded-lg">
-                <div className="recently-added-img flex items-center mr-3 ">
-                  <div className="rounded-md h-[90px] w-14 sm:h-[76px] sm:w-12 lg:h-[90px] lg:w-14 xl:h-[90px] xl:w-14">
-                    <img
-                      src="/assets/images/bluelock.jpeg"
-                      className="object-cover rounded-md h-full w-full"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="recently-added-title font-semibold mb-1 text-base sm:text-sm md:text-sm lg:text-sm xl:text-base">
-                  <div class="recently-added-title-content text-white mb-1">
-                    Blue Lock
-                  </div>
-                  <div className="trending-rating bottom-section flex items-center text-white mt-1">
-                    <i class="bx bxs-star mr-2 text-xl text-orange-500"></i>
-                    <div className="text-gray-300 text-sm">80%</div>
-                  </div>
-                </div>
-              </div>
-              <div className="recently-added-others p-4 cursor-pointer bg-slate-500 rounded-lg">
-                <div className="recently-added-img flex items-center mr-3 ">
-                  <div className="rounded-md h-[90px] w-14 sm:h-[76px] sm:w-12 lg:h-[90px] lg:w-14 xl:h-[90px] xl:w-14">
-                    <img
-                      src="/assets/images/bokunohero.jpg"
-                      className="object-cover rounded-md h-full w-full"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="recently-added-title font-semibold mb-1 text-base sm:text-sm md:text-sm lg:text-sm xl:text-base">
-                  <div class="recently-added-title-content text-white mb-1">
-                    My Hero Academy
-                  </div>
-                  <div className="trending-rating bottom-section flex items-center text-white mt-1">
-                    <i class="bx bxs-star mr-2 text-xl text-orange-500"></i>
-                    <div className="text-gray-300 text-sm">80%</div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default DetailsPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<Tilt options={options}>
-          <div className="comment-card h-56 relative p-4 rounded-lg bg-slate-500">
-            <div className="comment-writer mb-3">
-              <div className="flex">
-                <div className="comment-writer-img flex items-center mr-3 ">
-                  <div className="rounded-md">
-                    <img
-                      src="/assets/avatar/card-item-3.jpg"
-                      className="object-cover rounded-md h-14 w-14"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="comment-writer-name mb-1">
-                  <div class="comment-time text-white font-semibold">
-                    Zakaria zejly
-                  </div>
-                  <div className="text-gray-200">
-                    <div className="mr-6">- 14:35 Fev 2023</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="comment-text text-white">
-              Lorem, ipsum dolor sit amet consecte tur adipisicing elit
-            </div>
-            <div className="comment-anime absolute bottom-4 left-3 p-1 bg-slate-700 rounded-md text-white">
-              <div className="flex items-center mr-6">
-                <div className="mr-2 text-gray-300 mt-0.5">
-                  <i class="bx bxs-file text-pink-600"></i>
-                </div>
-                <div className="">My Hero Academy</div>
-              </div>
-            </div>
-          </div>
-        </Tilt>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React from "react";
-import { useEffect, useRef } from "react";
-import VanillaTilt from "vanilla-tilt";
-
-import "./comments.css";
-
-function Tilt(props) {
-  const { options, ...rest } = props;
-  const tilt = useRef(null);
-
-  useEffect(() => {
-    VanillaTilt.init(tilt.current, options);
-  }, [options]);
-
-  return <div ref={tilt} {...rest} />;
-}
-
-const Comments = () => {
-  const options = {
-    speed: 500,
-    max: 20,
-  };
-  return (
-    <div className="comments-container bg-slate-700 p-4 mb-6 rounded-lg">
-      <div className="comment-header flex mb-4">
-        <div className="newest-comments border-solid border border-pink-600 py-1.5 px-3 text-md font-medium text-pink-600 rounded-lg hover:bg-white hover:text-pink-600 cursor-pointer mr-6">
-          Newest Comments
-        </div>
-        <div className="newest-comments border-solid border border-white py-1.5 px-3 text-md font-medium text-white rounded-lg hover:bg-pink-600 hover:text-white cursor-pointer">
-          Top Comments
-        </div>
-      </div>
-      <div className="comment-content grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3">
-        <Tilt options={options}>
-          <div class=" grid-rows-header-content-badge p-4 rounded-lg bg-slate-500 h-80">
-            <div class="">
-              <div className="comment-writer mb-3">
-                <div className="flex">
-                  <div className="mostpopular-img mr-3 ">
-                    <div className="rounded-md w-14 h-14">
-                      <img
-                        src="/assets/avatar/card-item-2.jpg"
-                        className="object-cover rounded-md"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="comment-writer mb-3-name mb-1">
-                    <div class="comment-time text-white font-semibold">
-                      Zakaria zejly
-                    </div>
-                    <div className="text-gray-200">
-                      <div className="">- 14:35 Fev 2023</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class=" text-white mb-3 comment-text">
-              Lorem ipsum, dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, in.
-            </div>
-            <div class="row-span-1  self-end">
-              <div className="comment-anime p-1 bg-slate-700 rounded-md text-white">
-                <div className="flex items-center mr-6">
-                  <div className="mr-2 text-gray-300 mt-0.5">
-                    <i class="bx bxs-file text-pink-600"></i>
-                  </div>
-                  <div className="">My Hero Academy</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Tilt>
-      </div>
-    </div>
-  );
-};
-
-export default Comments;
+          </Tilt>
+        </Link>

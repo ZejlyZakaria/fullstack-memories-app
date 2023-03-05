@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { Link } from "react-router-dom";
+
 import "../login/login.css";
 
 const Register = () => {
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:8000/api/users", {
+        name: name,
+        address: address,
+        email: email,
+        password: password,
+      });
+
+      console.log(response.data);
+      navigate("/login");
+    } catch (error) {
+      setErrorMessage("Email existe déjà");
+    }
+  };
+
   return (
     <div className="wrapper">
       <div id="stars"></div>
@@ -15,10 +44,7 @@ const Register = () => {
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Create your account
               </h1>
-              <form
-                class="space-y-4 md:space-y-6"
-                action="#"
-              >
+              <form class="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
                   <div>
                     <label
@@ -34,6 +60,8 @@ const Register = () => {
                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder=""
                       required=""
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div>
@@ -50,9 +78,11 @@ const Register = () => {
                       placeholder="123 Rue xyz"
                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
                     />
                   </div>
-                  
+
                   <div>
                     <label
                       for="email"
@@ -67,7 +97,14 @@ const Register = () => {
                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
                       required=""
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
+                    <div class="text-center">
+                      <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                        <span class="font-medium">{errorMessage}</span>
+                      </p>
+                    </div>
                   </div>
                   <div>
                     <label
@@ -83,9 +120,10 @@ const Register = () => {
                       placeholder="••••••••"
                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
-                
                 </div>
                 <button
                   type="submit"
@@ -95,7 +133,12 @@ const Register = () => {
                 </button>
                 <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
-                  <Link className="font-medium text-primary-600 hover:underline dark:text-primary-500" to="/login">Sign in</Link>
+                  <Link
+                    className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    to="/login"
+                  >
+                    Sign in
+                  </Link>
                 </p>
               </form>
             </div>
